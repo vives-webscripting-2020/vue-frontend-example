@@ -1,0 +1,31 @@
+{
+  "name": "vue-frontend-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "dev": "webpack serve --port 8080"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vives-webscripting-2020/vue-frontend-example.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vives-webscripting-2020/vue-frontend-example/issues"
+  },
+  "homepage": "https://github.com/vives-webscripting-2020/vue-frontend-example#readme",
+  "devDependencies": {
+    "ts-loader": "^8.0.11",
+    "typescript": "^4.1.2",
+    "vue": "^3.0.4",
+    "webpack": "^5.10.0",
+    "webpack-cli": "^4.2.0",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
