@@ -45,24 +45,16 @@
         <hr>
         <h2 class="is-size-2">Colors</h2>
         <table class="table is-fullwidth is-striped">
-            <tr>
-                <th>Name</th>
-                <th>Year</th>
-                <th>Color</th>
-                <th></th>
-            </tr>
-            <tr v-for="color in colors">
-                <td>{{ color.name }}</td>
-                <td>{{ color.year }}</td>
-                <td>{{ color.color }}</td>
-                <td>
-                    <span class="icon">
-                        <i class="fas fa-edit"></i>
-                    </span>
-                    <span class="icon">
-                        <i class="fas fa-trash-alt"></i>
-                    </span>
-                </td>
+            <tr 
+                v-for="color in colors"
+                v-is="'color-row'" 
+                :id="color.id"
+                :name="color.name" 
+                :year="color.year" 
+                :color="color.color"
+                v-on:delete-color="deleteColor"
+                v-on:update-color="updateColor"
+            >
             </tr>
         </table>
     </div>
