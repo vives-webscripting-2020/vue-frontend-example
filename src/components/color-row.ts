@@ -26,13 +26,16 @@ export default defineComponent({
             <td v-if="!edit">{{ name }}</td>
             <td v-if="!edit">{{ year }}</td>
             <td v-if="!edit">{{ color }}</td>
-            <td v-if="edit"><input v-model="changedColor.name"/></td>
-            <td v-if="edit"><input v-model="changedColor.year" /></td>
-            <td v-if="edit"><input v-model="changedColor.color" /></td>
+            <td v-if="edit"><input class="input" v-model="changedColor.name"/></td>
+            <td v-if="edit"><input class="input" v-model="changedColor.year" /></td>
+            <td v-if="edit"><input class="input" v-model="changedColor.color" /></td>
             <td>
-                <span class="icon" @click="updateColor">
+                <span class="icon" v-if="!edit" @click="edit = true">
                     <i class="fas fa-edit"></i>
                 </span>
+                <button v-if="edit" class="button is-danger" @click="updateColor">
+                    Save
+                </button>
                 <span class="icon" @click="deleteColor">
                     <i class="fas fa-trash-alt"></i>
                 </span>
@@ -45,14 +48,9 @@ export default defineComponent({
         },
         updateColor() {
             if(this.edit){
-                this.$emit('update-color', {
-                    id: this.id,
-                    name: this.name,
-                    color: this.color,
-                    year: this.year
-                })
+                this.$emit('update-color', this.changedColor)
             }
-            this.edit = !this.edit
+            this.edit = false
         }
     }
 })
