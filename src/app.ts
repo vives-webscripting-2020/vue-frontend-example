@@ -13,25 +13,36 @@ const app = createApp( {
         }
     },
     mounted() {
-        axios.get('https://reqres.in/api/color')
-        .then( (result) => {
-            console.log(result.data.data)
-            this.colors = result.data.data
-         })
+        this.getColors()
     },
     methods: {
         deleteColor(id: number) {
             console.log(`Delete color with id: ${id}`)
             axios.delete(`https://reqres.in/api/color/${id}`)
-            // .then( result => console.log(result))
+            .then( () => {
+                this.getColors()
+            })
         },
         updateColor( color: {id: number, name: string, year: string, color: string}) {
             console.log('Update color: ', color)
             axios.put(`https://reqres.in/api/color/${color.id}`, color)
+            .then( () => {
+                this.getColors()
+            })
         },
         createColor( color: {name: string, year: string, color: string}) {
             console.log("Create color:", color)
             axios.post('https://reqres.in/api/color', color)
+            .then( () => {
+                this.getColors()
+            })
+        },
+        getColors() {
+            axios.get('https://reqres.in/api/color')
+            .then( (result) => {
+                console.log(result.data.data)
+                this.colors = result.data.data
+             })
         }
     }
 })
