@@ -51,49 +51,10 @@
                 <th>Color</th>
                 <th></th>
             </tr>
-            <tr>
-                <td>Yellow</td>
-                <td>2012</td>
-                <td>#00FFFF</td>
-                <td>
-                    <span class="icon">
-                        <i class="fas fa-edit"></i>
-                    </span>
-                    <span class="icon">
-                        <i class="fas fa-trash-alt"></i>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td>Yellow</td>
-                <td>2012</td>
-                <td>#00FFFF</td>
-                <td>
-                    <span class="icon">
-                        <i class="fas fa-edit"></i>
-                    </span>
-                    <span class="icon">
-                        <i class="fas fa-trash-alt"></i>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td>Yellow</td>
-                <td>2012</td>
-                <td>#00FFFF</td>
-                <td>
-                    <span class="icon">
-                        <i class="fas fa-edit"></i>
-                    </span>
-                    <span class="icon">
-                        <i class="fas fa-trash-alt"></i>
-                    </span>
-                </td>
-            </tr>
-            <tr>
-                <td>Yellow</td>
-                <td>2012</td>
-                <td>#00FFFF</td>
+            <tr v-for="color in colors">
+                <td>{{ color.name }}</td>
+                <td>{{ color.year }}</td>
+                <td>{{ color.color }}</td>
                 <td>
                     <span class="icon">
                         <i class="fas fa-edit"></i>
