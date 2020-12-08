@@ -5,10 +5,105 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue frontend example</title>
     <script src="bundle.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.css">   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </head>
 <body>
-    <div id="app">
-        {{ hello }}
+    <div id="app" class="container">
+        <h1 class="is-size-1">Colors app</h1>
+        <hr>
+        <h2 class="is-size-2">Add new color</h2>
+        <section>
+            <div class="columns">
+                <div class="field column">
+                    <label class="label">Name</label>
+                    <div class="control">
+                      <input class="input" type="text" placeholder="Name">
+                    </div>
+                    <p class="help">The name of the color</p>
+                  </div>
+                  <div class="field column">
+                    <label class="label">Year</label>
+                    <div class="control">
+                      <input class="input" type="text" placeholder="Year">
+                    </div>
+                    <p class="help">When is it created</p>
+                  </div>
+                  <div class="field column">
+                    <label class="label">Color</label>
+                    <div class="control">
+                      <input class="input" type="text" placeholder="#000000">
+                    </div>
+                    <p class="help">The hex value of the color</p>
+                  </div>
+            </div>
+            <div>
+                <button class="button is-primary">Add</button>
+            </div>
+              
+        </section>
+        <hr>
+        <h2 class="is-size-2">Colors</h2>
+        <table class="table is-fullwidth is-striped">
+            <tr>
+                <th>Name</th>
+                <th>Year</th>
+                <th>Color</th>
+                <th></th>
+            </tr>
+            <tr>
+                <td>Yellow</td>
+                <td>2012</td>
+                <td>#00FFFF</td>
+                <td>
+                    <span class="icon">
+                        <i class="fas fa-edit"></i>
+                    </span>
+                    <span class="icon">
+                        <i class="fas fa-trash-alt"></i>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td>Yellow</td>
+                <td>2012</td>
+                <td>#00FFFF</td>
+                <td>
+                    <span class="icon">
+                        <i class="fas fa-edit"></i>
+                    </span>
+                    <span class="icon">
+                        <i class="fas fa-trash-alt"></i>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td>Yellow</td>
+                <td>2012</td>
+                <td>#00FFFF</td>
+                <td>
+                    <span class="icon">
+                        <i class="fas fa-edit"></i>
+                    </span>
+                    <span class="icon">
+                        <i class="fas fa-trash-alt"></i>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td>Yellow</td>
+                <td>2012</td>
+                <td>#00FFFF</td>
+                <td>
+                    <span class="icon">
+                        <i class="fas fa-edit"></i>
+                    </span>
+                    <span class="icon">
+                        <i class="fas fa-trash-alt"></i>
+                    </span>
+                </td>
+            </tr>
+        </table>
     </div>
 </body>
 </html>
